@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MPSProject">
+    <projectModules>
+      <modulePath path="$PROJECT_DIR$/languages/de.citec.json.gen.plaintext/de.citec.json.gen.plaintext.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/de.citec.json/de.citec.json.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/de.citec.json.build/de.citec.json.build.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/de.citec.json.sandbox/de.citec.json.sandbox.msd" folder="" />
+    </projectModules>
+  </component>
+</project>

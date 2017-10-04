@@ -1,0 +1,14 @@
+workspace.xml
+
+# generated java classes and java source files
+classes_gen
+source_gen
+source_gen.caches
+
+# generated test code and test results
+test_gen
+test_gen.caches
+TEST-*.xml
+junit*.properties
+
+icons
