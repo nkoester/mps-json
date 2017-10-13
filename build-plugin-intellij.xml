@@ -49,7 +49,7 @@
     <echoxml file="${build.tmp}/default/de.citec.json-plugin-intellij.zip/de.citec.json/META-INF/plugin.xml">
       <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
         <id>de.citec.json</id>
-        <name>de.citec.json</name>
+        <name>JSON Language</name>
         <description>Language to describe JSON data and generate .json files.</description>
         <version>${current_version}</version>
         <depends>jetbrains.mps.core</depends>

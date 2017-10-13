@@ -254,7 +254,7 @@
       </node>
       <node concept="3_J27D" id="7jMyKDanCJe" role="m$_yQ">
         <node concept="3Mxwew" id="7jMyKDanCJf" role="3MwsjC">
-          <property role="3MwjfP" value="de.citec.json" />
+          <property role="3MwjfP" value="JSON Language" />
         </node>
       </node>
       <node concept="3_J27D" id="7jMyKDanCJg" role="m$_w8">
@@ -496,7 +496,7 @@
       </node>
       <node concept="3_J27D" id="7jMyKDaoer6" role="m$_yQ">
         <node concept="3Mxwew" id="7jMyKDaoer7" role="3MwsjC">
-          <property role="3MwjfP" value="de.citec.json" />
+          <property role="3MwjfP" value="JSON Language" />
         </node>
       </node>
       <node concept="3_J27D" id="7jMyKDaoer8" role="m$_w8">
