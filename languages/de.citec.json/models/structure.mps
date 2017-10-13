@@ -16,6 +16,7 @@
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
+        <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
@@ -69,7 +70,8 @@
     <property role="EcuMT" value="4000107710161286472" />
     <property role="TrG5h" value="Object" />
     <property role="3GE5qa" value="core" />
-    <property role="34LRSv" value="object" />
+    <property role="34LRSv" value="o" />
+    <property role="R4oN_" value="JSON {} object" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3u3fcjntRf9" role="1TKVEi">
       <property role="IQ2ns" value="4000107710161318857" />
@@ -97,13 +99,13 @@
   </node>
   <node concept="1TIwiD" id="3u3fcjntRf5">
     <property role="EcuMT" value="4000107710161318853" />
-    <property role="TrG5h" value="Json" />
+    <property role="TrG5h" value="JsonFile" />
     <property role="19KtqR" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3u3fcjntRf6" role="1TKVEi">
       <property role="IQ2ns" value="4000107710161318854" />
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="objects" />
+      <property role="20kJfa" value="object" />
       <property role="20lbJX" value="1" />
       <ref role="20lvS9" node="3u3fcjntJl8" resolve="Object" />
     </node>
@@ -146,9 +148,10 @@
   </node>
   <node concept="1TIwiD" id="3u3fcjntRfm">
     <property role="EcuMT" value="4000107710161318870" />
-    <property role="3GE5qa" value="core.values" />
+    <property role="3GE5qa" value="core.values.string" />
     <property role="TrG5h" value="String" />
-    <property role="34LRSv" value="string" />
+    <property role="34LRSv" value="s" />
+    <property role="R4oN_" value="String value" />
     <ref role="1TJDcQ" to="tpee:f$Xl_Og" resolve="StringLiteral" />
     <node concept="PrWs8" id="3u3fcjntRfo" role="PzmwI">
       <ref role="PrY4T" node="3u3fcjntRfn" resolve="IJsonValue" />
@@ -161,9 +164,10 @@
   </node>
   <node concept="1TIwiD" id="3u3fcjntRfu">
     <property role="EcuMT" value="4000107710161318878" />
-    <property role="3GE5qa" value="core.values" />
+    <property role="3GE5qa" value="core.values.number" />
     <property role="TrG5h" value="Number" />
-    <property role="34LRSv" value="number" />
+    <property role="34LRSv" value="d" />
+    <property role="R4oN_" value="Number/digit value" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="3u3fcjnuhth" role="1TKVEl">
       <property role="IQ2nx" value="4000107710161426257" />
@@ -178,7 +182,8 @@
     <property role="EcuMT" value="4000107710161418235" />
     <property role="3GE5qa" value="core.values.array" />
     <property role="TrG5h" value="Array" />
-    <property role="34LRSv" value="array" />
+    <property role="R4oN_" value="Array of JSON objects" />
+    <property role="34LRSv" value="a" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3u3fcjnufvY" role="1TKVEi">
       <property role="IQ2ns" value="4000107710161418238" />
@@ -208,15 +213,16 @@
     </node>
   </node>
   <node concept="Az7Fb" id="3u3fcjnuhtg">
-    <property role="3GE5qa" value="core.values" />
+    <property role="3GE5qa" value="core.values.number" />
     <property role="TrG5h" value="NumberDT" />
     <property role="FLfZY" value="-?[0-9]+(\\.[0-9]*)?([Ee][\\+\\-]?[0-9]+)?[dD]?" />
   </node>
   <node concept="1TIwiD" id="3u3fcjnuouy">
     <property role="EcuMT" value="4000107710161455010" />
     <property role="TrG5h" value="Null" />
-    <property role="3GE5qa" value="core.values" />
-    <property role="34LRSv" value="null" />
+    <property role="3GE5qa" value="core.values.null" />
+    <property role="34LRSv" value="n" />
+    <property role="R4oN_" value="Null value" />
     <ref role="1TJDcQ" to="tpee:f_0Nm5B" resolve="NullLiteral" />
     <node concept="PrWs8" id="3u3fcjnuouz" role="PzmwI">
       <ref role="PrY4T" node="3u3fcjntRfn" resolve="IJsonValue" />
@@ -224,22 +230,58 @@
   </node>
   <node concept="1TIwiD" id="3u3fcjnupNO">
     <property role="EcuMT" value="4000107710161460468" />
-    <property role="3GE5qa" value="core.values" />
+    <property role="3GE5qa" value="core.values.bool" />
     <property role="TrG5h" value="Boolean" />
-    <property role="34LRSv" value="bool" />
+    <property role="34LRSv" value="b" />
+    <property role="R4oN_" value="Boolean value" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="3u3fcjnuzHp" role="1TKVEl">
       <property role="IQ2nx" value="4000107710161501017" />
       <property role="TrG5h" value="value" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
-    <node concept="PrWs8" id="3u3fcjnuzHn" role="PzmwI">
-      <ref role="PrY4T" node="3u3fcjntRfn" resolve="IJsonValue" />
-    </node>
   </node>
   <node concept="PlHQZ" id="38yiHcMe5Io">
     <property role="EcuMT" value="3612532122045668248" />
     <property role="TrG5h" value="INestedJson" />
+  </node>
+  <node concept="1TIwiD" id="78xf10wh4$G">
+    <property role="EcuMT" value="8223920434513725740" />
+    <property role="TrG5h" value="JsonFileReference" />
+    <property role="34LRSv" value="r" />
+    <property role="R4oN_" value="Input JSON file reference" />
+    <node concept="1TJgyj" id="78xf10wh4$H" role="1TKVEi">
+      <property role="20lmBu" value="reference" />
+      <property role="20lbJX" value="0..1" />
+      <property role="IQ2ns" value="8223920434513725741" />
+      <property role="20kJfa" value="jsonFile" />
+      <ref role="20lvS9" node="3u3fcjntRf5" resolve="JsonFile" />
+    </node>
+    <node concept="PrWs8" id="78xf10whaFm" role="PzmwI">
+      <ref role="PrY4T" node="3u3fcjntRfn" resolve="IJsonValue" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="78xf10wisz0">
+    <property role="EcuMT" value="8223920434514086080" />
+    <property role="3GE5qa" value="core.values.bool" />
+    <property role="TrG5h" value="True" />
+    <property role="34LRSv" value="t" />
+    <property role="R4oN_" value="True boolean value" />
+    <ref role="1TJDcQ" node="3u3fcjnupNO" resolve="Boolean" />
+    <node concept="PrWs8" id="78xf10witkQ" role="PzmwI">
+      <ref role="PrY4T" node="3u3fcjntRfn" resolve="IJsonValue" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="78xf10wisz1">
+    <property role="EcuMT" value="8223920434514086081" />
+    <property role="3GE5qa" value="core.values.bool" />
+    <property role="TrG5h" value="False" />
+    <property role="34LRSv" value="f" />
+    <property role="R4oN_" value="False boolean value" />
+    <ref role="1TJDcQ" node="3u3fcjnupNO" resolve="Boolean" />
+    <node concept="PrWs8" id="78xf10witkU" role="PzmwI">
+      <ref role="PrY4T" node="3u3fcjntRfn" resolve="IJsonValue" />
+    </node>
   </node>
 </model>
 

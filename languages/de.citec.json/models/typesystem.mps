@@ -121,7 +121,7 @@
   </registry>
   <node concept="18kY7G" id="38yiHcMigB2">
     <property role="TrG5h" value="check_Number" />
-    <property role="3GE5qa" value="core.values" />
+    <property role="3GE5qa" value="core.values.number" />
     <node concept="3clFbS" id="38yiHcMigB3" role="18ibNy">
       <node concept="3clFbJ" id="38yiHcMigBu" role="3cqZAp">
         <node concept="1Wc70l" id="38yiHcMm1vA" role="3clFbw">

@@ -3,8 +3,11 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/de.citec.json-mps" />
   <property name="build.layout" location="${build.dir}/artifacts/de.citec.json-mps" />
-  <property name="mps_home" location="" />
-  <property name="artifacts.mps" location="${mps_home}" />
+  <property name="path__mps" location="" />
+  <property name="path__plaintextgen" location="" />
+  <property name="current_version" value="1.0" />
+  <property name="artifacts.mps" location="${path__mps}" />
+  <property name="artifacts.com.dslfoundry.plaintextgen" location="${path__plaintextgen}" />
   <property file="${artifacts.mps}/build.properties" prefix="import.mps" />
   <property name="mps.build.number" value="${import.mps.mps.build.number}" />
   <property name="mps.date" value="${import.mps.mps.date}" />
@@ -32,11 +35,13 @@
       <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
         <id>de.citec.json</id>
         <name>de.citec.json</name>
-        <description>Language to describe JSON data.</description>
-        <version>1.0</version>
-        <vendor url="https://cit-ec.de/cse">CITEC</vendor>
+        <description>Language to describe JSON data and generate .json files.</description>
+        <version>${current_version}</version>
         <depends>jetbrains.mps.core</depends>
         <depends>jetbrains.mps.build</depends>
+        <depends>com.dslfoundry.plaintextgen</depends>
+        <vendor email="nkoester@techfak.uni-bielefeld.de" url="https://github.com/nkoester/mps-json">nkoester</vendor>
+        <idea-version until-build="2017.2" since-build="2017.2" />
         
         <extensions defaultExtensionNs="com.intellij">
           <mps.LanguageLibrary dir="/languages" />
@@ -159,12 +164,15 @@
     <zip destfile="${build.layout}/de.citec.json-plugin.mps.zip">
       <fileset dir="${build.tmp}/default/de.citec.json-plugin.mps.zip" />
     </zip>
-    <echo file="${build.layout}/build.properties">mps.build.number=${mps.build.number}${line.separator}mps.date=${mps.date}${line.separator}mps.build.vcs.number=${mps.build.vcs.number}${line.separator}mps.teamcity.buildConfName=${mps.teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${mps.idea.platform.build.number}${line.separator}mps.mps.build.counter=${mps.mps.build.counter}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
+    <echo file="${build.layout}/build.properties">de.citec.json-mps.current_version=${current_version}${line.separator}mps.build.number=${mps.build.number}${line.separator}mps.date=${mps.date}${line.separator}mps.build.vcs.number=${mps.build.vcs.number}${line.separator}mps.teamcity.buildConfName=${mps.teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${mps.idea.platform.build.number}${line.separator}mps.mps.build.counter=${mps.mps.build.counter}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
   
   <target name="buildDependents" />
   
-  <target name="fetchDependencies" />
+  <target name="fetchDependencies">
+    <mkdir dir="${build.tmp}/deps/com.dslfoundry.plaintextgen/com.dslfoundry.plaintextgen.zip" />
+    <unzip src="${artifacts.com.dslfoundry.plaintextgen}/com.dslfoundry.plaintextgen.zip" dest="${build.tmp}/deps/com.dslfoundry.plaintextgen/com.dslfoundry.plaintextgen.zip" />
+  </target>
   
   <target name="build" depends="assemble" />
   
@@ -188,6 +196,7 @@
     <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true">
       <plugin path="${artifacts.mps}/plugins/mps-build" />
       <plugin path="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../.." />
+      <plugin path="${build.tmp}/deps/com.dslfoundry.plaintextgen/com.dslfoundry.plaintextgen.zip/com.dslfoundry.plaintextgen" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -260,7 +269,9 @@
       <library file="${artifacts.mps}/plugins/mps-build/languages/build/jetbrains.mps.build.jar" />
       <library file="${artifacts.mps}/plugins/mps-build/languages/build/jetbrains.mps.build.mps.jar" />
       <library file="${artifacts.mps}/plugins/mps-build/languages/build/jetbrains.mps.build.workflow.jar" />
+      <library file="${artifacts.mps}/plugins/mps-build/languages/build/jetbrains.mps.build.workflow.preset.jar" />
       <library file="${artifacts.mps}/plugins/mps-build/languages/build/jetbrains.mps.ide.build.jar" />
+      <library file="${build.tmp}/deps/com.dslfoundry.plaintextgen/com.dslfoundry.plaintextgen.zip/com.dslfoundry.plaintextgen/languages/com.dslfoundry.plaintextgen/com.dslfoundry.plaintextgen.build.jar" />
       <chunk>
         <module file="${basedir}/languages/de.citec.json/de.citec.json.mpl" />
         <module file="${basedir}/solutions/de.citec.json.build/de.citec.json.build.msd" />
@@ -268,7 +279,8 @@
       <jvmargs>
         <arg value="-Xmx512m" />
       </jvmargs>
-      <macro name="mps_home" path="${mps_home}" />
+      <macro name="path__mps" path="${path__mps}" />
+      <macro name="path__plaintextgen" path="${path__plaintextgen}" />
     </generate>
   </target>
   
@@ -372,7 +384,9 @@
       <src>
         <path location="${basedir}/solutions/de.citec.json.build/source_gen" />
       </src>
-      <classpath />
+      <classpath>
+        <fileset file="${build.tmp}/deps/com.dslfoundry.plaintextgen/com.dslfoundry.plaintextgen.zip/com.dslfoundry.plaintextgen/languages/com.dslfoundry.plaintextgen/com.dslfoundry.plaintextgen.build.jar" />
+      </classpath>
     </javac>
   </target>
   
