@@ -1,0 +1,7 @@
+<project name="de.citec.json-all" default="build">
+    <target name="build">
+        <ant antfile="build-plugin-mps.xml" target="build" />
+        <ant antfile="build-plugin-intellij.xml" target="build" />
+        <ant antfile="build-ide.xml" target="build" />
+    </target>
+</project>

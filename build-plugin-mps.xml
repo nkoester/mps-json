@@ -28,10 +28,10 @@
   
   <target name="assemble" depends="classes, declare-mps-tasks">
     <mkdir dir="${build.layout}" />
-    <mkdir dir="${build.tmp}/default/de.citec.json-plugin.mps.zip" />
-    <mkdir dir="${build.tmp}/default/de.citec.json-plugin.mps.zip/de.citec.json" />
-    <mkdir dir="${build.tmp}/default/de.citec.json-plugin.mps.zip/de.citec.json/META-INF" />
-    <echoxml file="${build.tmp}/default/de.citec.json-plugin.mps.zip/de.citec.json/META-INF/plugin.xml">
+    <mkdir dir="${build.tmp}/default/de.citec.json-plugin-mps.zip" />
+    <mkdir dir="${build.tmp}/default/de.citec.json-plugin-mps.zip/de.citec.json" />
+    <mkdir dir="${build.tmp}/default/de.citec.json-plugin-mps.zip/de.citec.json/META-INF" />
+    <echoxml file="${build.tmp}/default/de.citec.json-plugin-mps.zip/de.citec.json/META-INF/plugin.xml">
       <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
         <id>de.citec.json</id>
         <name>de.citec.json</name>
@@ -41,15 +41,15 @@
         <depends>jetbrains.mps.build</depends>
         <depends>com.dslfoundry.plaintextgen</depends>
         <vendor email="nkoester@techfak.uni-bielefeld.de" url="https://github.com/nkoester/mps-json">nkoester</vendor>
-        <idea-version until-build="2017.2" since-build="2017.2" />
+        <idea-version until-build="172.1127" since-build="171.1127" />
         
         <extensions defaultExtensionNs="com.intellij">
           <mps.LanguageLibrary dir="/languages" />
         </extensions>
       </idea-plugin>
     </echoxml>
-    <mkdir dir="${build.tmp}/default/de.citec.json-plugin.mps.zip/de.citec.json/languages" />
-    <mkdir dir="${build.tmp}/default/de.citec.json-plugin.mps.zip/de.citec.json/languages/de.citec.json" />
+    <mkdir dir="${build.tmp}/default/de.citec.json-plugin-mps.zip/de.citec.json/languages" />
+    <mkdir dir="${build.tmp}/default/de.citec.json-plugin-mps.zip/de.citec.json/languages/de.citec.json" />
     <mkdir dir="${build.tmp}/default/de.citec.json.jar" />
     <mkdir dir="${build.tmp}/default/de.citec.json.jar/META-INF" />
     <echoxml file="${build.tmp}/default/de.citec.json.jar/META-INF/module.xml">
@@ -76,7 +76,7 @@
         <sources jar="de.citec.json-src.jar" descriptor="de.citec.json.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/de.citec.json-plugin.mps.zip/de.citec.json/languages/de.citec.json/de.citec.json.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/de.citec.json-plugin-mps.zip/de.citec.json/languages/de.citec.json/de.citec.json.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/de.citec.json" />
       <fileset dir="${basedir}/languages/de.citec.json" includes="icons/**, resources/**" />
       <fileset dir="${basedir}/languages/de.citec.json/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
@@ -104,7 +104,7 @@
         <sources jar="de.citec.json-src.jar" descriptor="de.citec.json.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/de.citec.json-plugin.mps.zip/de.citec.json/languages/de.citec.json/de.citec.json-generator.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/de.citec.json-plugin-mps.zip/de.citec.json/languages/de.citec.json/de.citec.json-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/de.citec.json#3418552502172588353" />
       <fileset dir="${build.tmp}/default/de.citec.json-generator.jar" />
     </jar>
@@ -114,7 +114,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-de.citec.json-models">
       <fileset dir="${basedir}/languages/de.citec.json/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/de.citec.json-plugin.mps.zip/de.citec.json/languages/de.citec.json/de.citec.json-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/de.citec.json-plugin-mps.zip/de.citec.json/languages/de.citec.json/de.citec.json-src.jar" duplicate="preserve">
       <fileset dir="${basedir}/languages/de.citec.json/generator/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -131,6 +131,87 @@
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-de.citec.json-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-de.citec.json-models" prefix="module/models" />
     </jar>
+    <mkdir dir="${build.tmp}/default/de.citec.json.gen.plaintext.jar" />
+    <mkdir dir="${build.tmp}/default/de.citec.json.gen.plaintext.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/de.citec.json.gen.plaintext.jar/META-INF/module.xml">
+      <module namespace="de.citec.json.gen.plaintext" type="language" uuid="48020ded-b0cc-4014-8fcf-0d2907e0cfdd">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
+          <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
+          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
+          <module ref="34e84b8f-afa8-4364-abcd-a279fddddbe7(jetbrains.mps.editor.runtime)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
+          <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
+        </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
+        <sources jar="de.citec.json.gen.plaintext-src.jar" descriptor="de.citec.json.gen.plaintext.mpl" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.tmp}/default/de.citec.json-plugin-mps.zip/de.citec.json/languages/de.citec.json/de.citec.json.gen.plaintext.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/de.citec.json.gen.plaintext" />
+      <fileset dir="${basedir}/languages/de.citec.json.gen.plaintext" includes="icons/**, resources/**" />
+      <fileset dir="${basedir}/languages/de.citec.json.gen.plaintext/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${build.tmp}/default/de.citec.json.gen.plaintext.jar" />
+    </jar>
+    <mkdir dir="${build.tmp}/default/de.citec.json.gen.plaintext-generator.jar" />
+    <mkdir dir="${build.tmp}/default/de.citec.json.gen.plaintext-generator.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/de.citec.json.gen.plaintext-generator.jar/META-INF/module.xml">
+      <module namespace="de.citec.json.gen.plaintext#4000107710162370652" type="generator" uuid="e602476d-e495-4486-98f5-2c2052a3b079">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
+          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
+        </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
+        <sources jar="de.citec.json.gen.plaintext-src.jar" descriptor="de.citec.json.gen.plaintext.mpl" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.tmp}/default/de.citec.json-plugin-mps.zip/de.citec.json/languages/de.citec.json/de.citec.json.gen.plaintext-generator.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/de.citec.json.gen.plaintext#4000107710162370652" />
+      <fileset dir="${build.tmp}/default/de.citec.json.gen.plaintext-generator.jar" />
+    </jar>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-de.citec.json.gen.plaintext-generator-template">
+      <fileset dir="${basedir}/languages/de.citec.json.gen.plaintext/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/languages-de.citec.json.gen.plaintext-models">
+      <fileset dir="${basedir}/languages/de.citec.json.gen.plaintext/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.tmp}/default/de.citec.json-plugin-mps.zip/de.citec.json/languages/de.citec.json/de.citec.json.gen.plaintext-src.jar" duplicate="preserve">
+      <fileset dir="${basedir}/languages/de.citec.json.gen.plaintext/generator/source_gen">
+        <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
+      </fileset>
+      <fileset dir="${basedir}/languages/de.citec.json.gen.plaintext/source_gen">
+        <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
+      </fileset>
+      <zipfileset file="${basedir}/languages/de.citec.json.gen.plaintext/de.citec.json.gen.plaintext.mpl" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-de.citec.json.gen.plaintext-generator-template" prefix="module/generator/template" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-de.citec.json.gen.plaintext-models" prefix="module/models" />
+    </jar>
     <mkdir dir="${build.tmp}/default/de.citec.json.build.jar" />
     <mkdir dir="${build.tmp}/default/de.citec.json.build.jar/META-INF" />
     <echoxml file="${build.tmp}/default/de.citec.json.build.jar/META-INF/module.xml">
@@ -142,7 +223,7 @@
         <sources jar="de.citec.json.build-src.jar" descriptor="de.citec.json.build.msd" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/de.citec.json-plugin.mps.zip/de.citec.json/languages/de.citec.json/de.citec.json.build.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/de.citec.json-plugin-mps.zip/de.citec.json/languages/de.citec.json/de.citec.json.build.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/de.citec.json.build" />
       <fileset dir="${basedir}/solutions/de.citec.json.build" includes="icons/**, resources/**" />
       <fileset dir="${basedir}/solutions/de.citec.json.build/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
@@ -151,7 +232,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/solutions-de.citec.json.build-models">
       <fileset dir="${basedir}/solutions/de.citec.json.build/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.tmp}/default/de.citec.json-plugin.mps.zip/de.citec.json/languages/de.citec.json/de.citec.json.build-src.jar" duplicate="preserve">
+    <jar destfile="${build.tmp}/default/de.citec.json-plugin-mps.zip/de.citec.json/languages/de.citec.json/de.citec.json.build-src.jar" duplicate="preserve">
       <fileset dir="${basedir}/solutions/de.citec.json.build/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -161,8 +242,8 @@
       <zipfileset file="${basedir}/solutions/de.citec.json.build/de.citec.json.build.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/solutions-de.citec.json.build-models" prefix="module/models" />
     </jar>
-    <zip destfile="${build.layout}/de.citec.json-plugin.mps.zip">
-      <fileset dir="${build.tmp}/default/de.citec.json-plugin.mps.zip" />
+    <zip destfile="${build.layout}/de.citec.json-plugin-mps.zip">
+      <fileset dir="${build.tmp}/default/de.citec.json-plugin-mps.zip" />
     </zip>
     <echo file="${build.layout}/build.properties">de.citec.json-mps.current_version=${current_version}${line.separator}mps.build.number=${mps.build.number}${line.separator}mps.date=${mps.date}${line.separator}mps.build.vcs.number=${mps.build.vcs.number}${line.separator}mps.teamcity.buildConfName=${mps.teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${mps.idea.platform.build.number}${line.separator}mps.mps.build.counter=${mps.mps.build.counter}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
@@ -181,7 +262,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.de.citec.json, java.compile.de.citec.json#3418552502172588353, java.compile.de.citec.json.build" />
+  <target name="compileJava" depends="java.compile.de.citec.json, java.compile.de.citec.json#3418552502172588353, java.compile.de.citec.json.gen.plaintext, java.compile.de.citec.json.gen.plaintext#4000107710162370652, java.compile.de.citec.json.build" />
   
   <target name="processResources" />
   
@@ -272,9 +353,11 @@
       <library file="${artifacts.mps}/plugins/mps-build/languages/build/jetbrains.mps.build.workflow.preset.jar" />
       <library file="${artifacts.mps}/plugins/mps-build/languages/build/jetbrains.mps.ide.build.jar" />
       <library file="${build.tmp}/deps/com.dslfoundry.plaintextgen/com.dslfoundry.plaintextgen.zip/com.dslfoundry.plaintextgen/languages/com.dslfoundry.plaintextgen/com.dslfoundry.plaintextgen.build.jar" />
+      <library file="${build.tmp}/deps/com.dslfoundry.plaintextgen/com.dslfoundry.plaintextgen.zip/com.dslfoundry.plaintextgen/languages/com.dslfoundry.plaintextgen/com.dslfoundry.plaintextgen.jar" />
       <chunk>
         <module file="${basedir}/languages/de.citec.json/de.citec.json.mpl" />
         <module file="${basedir}/solutions/de.citec.json.build/de.citec.json.build.msd" />
+        <module file="${basedir}/languages/de.citec.json.gen.plaintext/de.citec.json.gen.plaintext.mpl" />
       </chunk>
       <jvmargs>
         <arg value="-Xmx512m" />
@@ -376,6 +459,94 @@
     </javac>
   </target>
   
+  <target name="java.compile.de.citec.json.gen.plaintext" depends="java.compile.de.citec.json, fetchDependencies">
+    <mkdir dir="${basedir}/languages/de.citec.json.gen.plaintext/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/de.citec.json.gen.plaintext" />
+    <javac destdir="${build.tmp}/java/out/de.citec.json.gen.plaintext" fork="true" encoding="utf8" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${basedir}/languages/de.citec.json.gen.plaintext/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
+        <pathelement path="${build.tmp}/java/out/de.citec.json" />
+        <fileset file="${artifacts.mps}/lib/annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/log4j.jar" />
+        <fileset file="${artifacts.mps}/lib/jdom.jar" />
+        <fileset file="${artifacts.mps}/lib/trove4j.jar" />
+        <fileset file="${artifacts.mps}/lib/ecj-4.6.2.jar" />
+        <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.aspects.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
+      </classpath>
+    </javac>
+  </target>
+  
+  <target name="java.compile.de.citec.json.gen.plaintext#4000107710162370652" depends="java.compile.de.citec.json, java.compile.de.citec.json.gen.plaintext, fetchDependencies">
+    <mkdir dir="${basedir}/languages/de.citec.json.gen.plaintext/generator/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/de.citec.json.gen.plaintext#4000107710162370652" />
+    <javac destdir="${build.tmp}/java/out/de.citec.json.gen.plaintext#4000107710162370652" fork="true" encoding="utf8" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${basedir}/languages/de.citec.json.gen.plaintext/generator/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
+        <pathelement path="${build.tmp}/java/out/de.citec.json" />
+        <pathelement path="${build.tmp}/java/out/de.citec.json.gen.plaintext" />
+        <fileset file="${artifacts.mps}/lib/annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/log4j.jar" />
+        <fileset file="${artifacts.mps}/lib/jdom.jar" />
+        <fileset file="${artifacts.mps}/lib/trove4j.jar" />
+        <fileset file="${artifacts.mps}/lib/ecj-4.6.2.jar" />
+        <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
+        <fileset file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
+      </classpath>
+    </javac>
+  </target>
+  
   <target name="java.compile.de.citec.json.build">
     <mkdir dir="${basedir}/solutions/de.citec.json.build/source_gen" />
     <mkdir dir="${build.tmp}/java/out/de.citec.json.build" />
@@ -394,5 +565,7 @@
     <delete dir="${basedir}/languages/de.citec.json/source_gen" />
     <delete dir="${basedir}/languages/de.citec.json/generator/source_gen" />
     <delete dir="${basedir}/solutions/de.citec.json.build/source_gen" />
+    <delete dir="${basedir}/languages/de.citec.json.gen.plaintext/source_gen" />
+    <delete dir="${basedir}/languages/de.citec.json.gen.plaintext/generator/source_gen" />
   </target>
 </project>

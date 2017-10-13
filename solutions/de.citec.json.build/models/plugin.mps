@@ -190,7 +190,7 @@
       <node concept="3981dG" id="7jMyKDao2OH" role="39821P">
         <node concept="3_J27D" id="7jMyKDao2OI" role="Nbhlr">
           <node concept="3Mxwew" id="7jMyKDao2OJ" role="3MwsjC">
-            <property role="3MwjfP" value="de.citec.json-plugin.mps.zip" />
+            <property role="3MwjfP" value="de.citec.json-plugin-mps.zip" />
           </node>
         </node>
         <node concept="m$_wl" id="7jMyKDao2OK" role="39821P">
@@ -218,18 +218,37 @@
           <property role="3o6i5n" value="nkoester" />
         </node>
       </node>
-      <node concept="2pNNFK" id="2aMbqeN3MWF" role="20twgj">
+      <node concept="2pNNFK" id="7hyLc6Vva35" role="20twgj">
         <property role="2pNNFO" value="idea-version" />
-        <node concept="2pNUuL" id="2aMbqeN3MX5" role="2pNNFR">
+        <node concept="2pNUuL" id="7hyLc6Vva36" role="2pNNFR">
           <property role="2pNUuO" value="until-build" />
-          <node concept="2pMdtt" id="2aMbqeN3MXg" role="2pMdts">
-            <property role="2pMdty" value="2017.2" />
+          <node concept="2pMdtt" id="7hyLc6Vva37" role="2pMdts">
+            <property role="2pMdty" value="172.1127" />
           </node>
         </node>
-        <node concept="2pNUuL" id="2aMbqeN3MXk" role="2pNNFR">
+        <node concept="2pNUuL" id="7hyLc6Vva38" role="2pNNFR">
           <property role="2pNUuO" value="since-build" />
-          <node concept="2pMdtt" id="2aMbqeN3MXx" role="2pMdts">
-            <property role="2pMdty" value="2017.2" />
+          <node concept="2pMdtt" id="7hyLc6Vva39" role="2pMdts">
+            <property role="2pMdty" value="171.1127" />
+          </node>
+        </node>
+      </node>
+      <node concept="1X3_iC" id="7eUwXJU1iq5" role="lGtFl">
+        <property role="3V$3am" value="xml" />
+        <property role="3V$3ak" value="0cf935df-4699-4e9c-a132-fa109541cba3/6592112598314498932/1359186315025500371" />
+        <node concept="2pNNFK" id="2aMbqeN3MWF" role="8Wnug">
+          <property role="2pNNFO" value="idea-version" />
+          <node concept="2pNUuL" id="2aMbqeN3MX5" role="2pNNFR">
+            <property role="2pNUuO" value="until-build" />
+            <node concept="2pMdtt" id="2aMbqeN3MXg" role="2pMdts">
+              <property role="2pMdty" value="2017.2" />
+            </node>
+          </node>
+          <node concept="2pNUuL" id="2aMbqeN3MXk" role="2pNNFR">
+            <property role="2pNUuO" value="since-build" />
+            <node concept="2pMdtt" id="2aMbqeN3MXx" role="2pMdts">
+              <property role="2pMdty" value="2017.2" />
+            </node>
           </node>
         </node>
       </node>
@@ -301,40 +320,36 @@
           </node>
         </node>
       </node>
-      <node concept="1X3_iC" id="78xf10wcoVR" role="lGtFl">
-        <property role="3V$3am" value="modules" />
-        <property role="3V$3ak" value="0cf935df-4699-4e9c-a132-fa109541cba3/1500819558095907805/1500819558095907806" />
-        <node concept="1E1JtD" id="4J0OvZJhqvw" role="8Wnug">
-          <property role="BnDLt" value="true" />
-          <property role="TrG5h" value="de.citec.json.gen.plaintext" />
-          <property role="3LESm3" value="48020ded-b0cc-4014-8fcf-0d2907e0cfdd" />
-          <property role="2GAjPV" value="false" />
-          <node concept="55IIr" id="4J0OvZJhqvz" role="3LF7KH">
-            <node concept="2Ry0Ak" id="4J0OvZJhqx6" role="iGT6I">
-              <property role="2Ry0Am" value="languages" />
-              <node concept="2Ry0Ak" id="4J0OvZJhqx_" role="2Ry0An">
-                <property role="2Ry0Am" value="de.citec.json.gen.plaintext" />
-                <node concept="2Ry0Ak" id="4J0OvZJhqy4" role="2Ry0An">
-                  <property role="2Ry0Am" value="de.citec.json.gen.plaintext.mpl" />
-                </node>
+      <node concept="1E1JtD" id="4J0OvZJhqvw" role="2G$12L">
+        <property role="BnDLt" value="true" />
+        <property role="TrG5h" value="de.citec.json.gen.plaintext" />
+        <property role="3LESm3" value="48020ded-b0cc-4014-8fcf-0d2907e0cfdd" />
+        <property role="2GAjPV" value="false" />
+        <node concept="55IIr" id="4J0OvZJhqvz" role="3LF7KH">
+          <node concept="2Ry0Ak" id="4J0OvZJhqx6" role="iGT6I">
+            <property role="2Ry0Am" value="languages" />
+            <node concept="2Ry0Ak" id="4J0OvZJhqx_" role="2Ry0An">
+              <property role="2Ry0Am" value="de.citec.json.gen.plaintext" />
+              <node concept="2Ry0Ak" id="4J0OvZJhqy4" role="2Ry0An">
+                <property role="2Ry0Am" value="de.citec.json.gen.plaintext.mpl" />
               </node>
             </node>
           </node>
-          <node concept="1SiIV0" id="4J0OvZJhqzI" role="3bR37C">
-            <node concept="3bR9La" id="4J0OvZJhqzJ" role="1SiIV1">
+        </node>
+        <node concept="1SiIV0" id="4J0OvZJhqzI" role="3bR37C">
+          <node concept="3bR9La" id="4J0OvZJhqzJ" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7jMyKDanCJb" resolve="de.citec.json" />
+          </node>
+        </node>
+        <node concept="1yeLz9" id="4J0OvZJhqzK" role="1TViLv">
+          <property role="TrG5h" value="de.citec.json.gen.plaintext#4000107710162370652" />
+          <property role="3LESm3" value="e602476d-e495-4486-98f5-2c2052a3b079" />
+          <property role="2GAjPV" value="false" />
+          <node concept="1SiIV0" id="5uAxszBMvJ1" role="3bR37C">
+            <node concept="3bR9La" id="5uAxszBMvJ2" role="1SiIV1">
               <property role="3bR36h" value="false" />
               <ref role="3bR37D" node="7jMyKDanCJb" resolve="de.citec.json" />
-            </node>
-          </node>
-          <node concept="1yeLz9" id="4J0OvZJhqzK" role="1TViLv">
-            <property role="TrG5h" value="de.citec.json.gen.plaintext#4000107710162370652" />
-            <property role="3LESm3" value="e602476d-e495-4486-98f5-2c2052a3b079" />
-            <property role="2GAjPV" value="false" />
-            <node concept="1SiIV0" id="5uAxszBMvJ1" role="3bR37C">
-              <node concept="3bR9La" id="5uAxszBMvJ2" role="1SiIV1">
-                <property role="3bR36h" value="false" />
-                <ref role="3bR37D" node="7jMyKDanCJb" resolve="de.citec.json" />
-              </node>
             </node>
           </node>
         </node>
@@ -432,7 +447,7 @@
       <node concept="3981dG" id="7jMyKDaoerf" role="39821P">
         <node concept="3_J27D" id="7jMyKDaoerg" role="Nbhlr">
           <node concept="3Mxwew" id="7jMyKDaoerh" role="3MwsjC">
-            <property role="3MwjfP" value="de.citec.json-plugin.intellij.zip" />
+            <property role="3MwjfP" value="de.citec.json-plugin-intellij.zip" />
           </node>
         </node>
         <node concept="m$_wl" id="7jMyKDaoeri" role="39821P">
@@ -460,18 +475,22 @@
           <property role="3o6i5n" value="nkoester" />
         </node>
       </node>
-      <node concept="2pNNFK" id="5uAxszBLtz6" role="20twgj">
-        <property role="2pNNFO" value="idea-version" />
-        <node concept="2pNUuL" id="5uAxszBLtz7" role="2pNNFR">
-          <property role="2pNUuO" value="until-build" />
-          <node concept="2pMdtt" id="5uAxszBLtz8" role="2pMdts">
-            <property role="2pMdty" value="2017.2" />
+      <node concept="1X3_iC" id="7hyLc6Vva5b" role="lGtFl">
+        <property role="3V$3am" value="xml" />
+        <property role="3V$3ak" value="0cf935df-4699-4e9c-a132-fa109541cba3/6592112598314498932/1359186315025500371" />
+        <node concept="2pNNFK" id="5uAxszBLtz6" role="8Wnug">
+          <property role="2pNNFO" value="idea-version" />
+          <node concept="2pNUuL" id="5uAxszBLtz7" role="2pNNFR">
+            <property role="2pNUuO" value="until-build" />
+            <node concept="2pMdtt" id="5uAxszBLtz8" role="2pMdts">
+              <property role="2pMdty" value="2017.2" />
+            </node>
           </node>
-        </node>
-        <node concept="2pNUuL" id="5uAxszBLtz9" role="2pNNFR">
-          <property role="2pNUuO" value="since-build" />
-          <node concept="2pMdtt" id="5uAxszBLtza" role="2pMdts">
-            <property role="2pMdty" value="2017.2" />
+          <node concept="2pNUuL" id="5uAxszBLtz9" role="2pNNFR">
+            <property role="2pNUuO" value="since-build" />
+            <node concept="2pMdtt" id="5uAxszBLtza" role="2pMdts">
+              <property role="2pMdty" value="2017.2" />
+            </node>
           </node>
         </node>
       </node>
@@ -543,40 +562,36 @@
           </node>
         </node>
       </node>
-      <node concept="1X3_iC" id="78xf10wcoUy" role="lGtFl">
-        <property role="3V$3am" value="modules" />
-        <property role="3V$3ak" value="0cf935df-4699-4e9c-a132-fa109541cba3/1500819558095907805/1500819558095907806" />
-        <node concept="1E1JtD" id="4J0OvZJhNWJ" role="8Wnug">
-          <property role="BnDLt" value="true" />
-          <property role="TrG5h" value="de.citec.json.gen.plaintext" />
-          <property role="3LESm3" value="48020ded-b0cc-4014-8fcf-0d2907e0cfdd" />
-          <property role="2GAjPV" value="false" />
-          <node concept="55IIr" id="4J0OvZJhNWK" role="3LF7KH">
-            <node concept="2Ry0Ak" id="4J0OvZJhNWL" role="iGT6I">
-              <property role="2Ry0Am" value="languages" />
-              <node concept="2Ry0Ak" id="4J0OvZJhNWM" role="2Ry0An">
-                <property role="2Ry0Am" value="de.citec.json.gen.plaintext" />
-                <node concept="2Ry0Ak" id="4J0OvZJhNWN" role="2Ry0An">
-                  <property role="2Ry0Am" value="de.citec.json.gen.plaintext.mpl" />
-                </node>
+      <node concept="1E1JtD" id="4J0OvZJhNWJ" role="2G$12L">
+        <property role="BnDLt" value="true" />
+        <property role="TrG5h" value="de.citec.json.gen.plaintext" />
+        <property role="3LESm3" value="48020ded-b0cc-4014-8fcf-0d2907e0cfdd" />
+        <property role="2GAjPV" value="false" />
+        <node concept="55IIr" id="4J0OvZJhNWK" role="3LF7KH">
+          <node concept="2Ry0Ak" id="4J0OvZJhNWL" role="iGT6I">
+            <property role="2Ry0Am" value="languages" />
+            <node concept="2Ry0Ak" id="4J0OvZJhNWM" role="2Ry0An">
+              <property role="2Ry0Am" value="de.citec.json.gen.plaintext" />
+              <node concept="2Ry0Ak" id="4J0OvZJhNWN" role="2Ry0An">
+                <property role="2Ry0Am" value="de.citec.json.gen.plaintext.mpl" />
               </node>
             </node>
           </node>
-          <node concept="1SiIV0" id="4J0OvZJhNWO" role="3bR37C">
-            <node concept="3bR9La" id="4J0OvZJhNWP" role="1SiIV1">
+        </node>
+        <node concept="1SiIV0" id="4J0OvZJhNWO" role="3bR37C">
+          <node concept="3bR9La" id="4J0OvZJhNWP" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7jMyKDaoeqX" resolve="de.citec.json" />
+          </node>
+        </node>
+        <node concept="1yeLz9" id="4J0OvZJhNWQ" role="1TViLv">
+          <property role="TrG5h" value="de.citec.json.gen.plaintext#4000107710162370652" />
+          <property role="3LESm3" value="e602476d-e495-4486-98f5-2c2052a3b079" />
+          <property role="2GAjPV" value="false" />
+          <node concept="1SiIV0" id="5uAxszBMvJr" role="3bR37C">
+            <node concept="3bR9La" id="5uAxszBMvJs" role="1SiIV1">
               <property role="3bR36h" value="false" />
               <ref role="3bR37D" node="7jMyKDaoeqX" resolve="de.citec.json" />
-            </node>
-          </node>
-          <node concept="1yeLz9" id="4J0OvZJhNWQ" role="1TViLv">
-            <property role="TrG5h" value="de.citec.json.gen.plaintext#4000107710162370652" />
-            <property role="3LESm3" value="e602476d-e495-4486-98f5-2c2052a3b079" />
-            <property role="2GAjPV" value="false" />
-            <node concept="1SiIV0" id="5uAxszBMvJr" role="3bR37C">
-              <node concept="3bR9La" id="5uAxszBMvJs" role="1SiIV1">
-                <property role="3bR36h" value="false" />
-                <ref role="3bR37D" node="7jMyKDaoeqX" resolve="de.citec.json" />
-              </node>
             </node>
           </node>
         </node>
