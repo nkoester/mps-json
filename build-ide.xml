@@ -4,7 +4,7 @@
   <property name="build.tmp" location="${build.dir}/tmp/de.citec.json-ide" />
   <property name="build.layout" location="${build.dir}/artifacts/de.citec.json-ide" />
   <property name="path__mps" location="" />
-  <property name="current_version" value="1.0" />
+  <property name="current_version" value="1.0.1" />
   <property name="artifacts.de.citec.json-mps" location="${build.dir}/artifacts/de.citec.json-mps" />
   <property file="${artifacts.de.citec.json-mps}/build.properties" prefix="import.de.citec.json-mps" />
   <property name="de.citec.json-mps.current_version" value="${import.de.citec.json-mps.de.citec.json-mps.current_version}" />

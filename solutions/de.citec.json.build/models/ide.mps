@@ -936,7 +936,7 @@
       <node concept="aVJcg" id="78xf10wc_6Z" role="aVJcv">
         <node concept="NbPM2" id="78xf10wc_6Y" role="aVJcq">
           <node concept="3Mxwew" id="78xf10wc_6X" role="3MwsjC">
-            <property role="3MwjfP" value="1.0" />
+            <property role="3MwjfP" value="1.0.1" />
           </node>
         </node>
       </node>

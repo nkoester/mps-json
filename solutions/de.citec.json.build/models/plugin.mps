@@ -86,6 +86,9 @@
       <concept id="4903714810883702017" name="jetbrains.mps.build.structure.BuildVarRefStringPart" flags="ng" index="3Mxwey">
         <reference id="4903714810883702018" name="macro" index="3Mxwex" />
       </concept>
+      <concept id="8404904817668627802" name="jetbrains.mps.build.structure.BuildVariableMacroInitWithFileContent" flags="ng" index="3SJUkW">
+        <child id="8404904817668744912" name="fileName" index="3SIlUQ" />
+      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -169,7 +172,7 @@
       <node concept="aVJcg" id="78xf10wcBY2" role="aVJcv">
         <node concept="NbPM2" id="78xf10wcBY3" role="aVJcq">
           <node concept="3Mxwew" id="78xf10wcBY4" role="3MwsjC">
-            <property role="3MwjfP" value="1.0" />
+            <property role="3MwjfP" value="1.0.1" />
           </node>
         </node>
       </node>
@@ -190,7 +193,13 @@
       <node concept="3981dG" id="7jMyKDao2OH" role="39821P">
         <node concept="3_J27D" id="7jMyKDao2OI" role="Nbhlr">
           <node concept="3Mxwew" id="7jMyKDao2OJ" role="3MwsjC">
-            <property role="3MwjfP" value="de.citec.json-plugin-mps.zip" />
+            <property role="3MwjfP" value="de.citec.json-plugin-mps-" />
+          </node>
+          <node concept="3Mxwey" id="6BxUZNrgIl$" role="3MwsjC">
+            <ref role="3Mxwex" to="ffeo:3IKDaVZnAxg" resolve="build.number" />
+          </node>
+          <node concept="3Mxwew" id="6BxUZNrgIkG" role="3MwsjC">
+            <property role="3MwjfP" value=".zip" />
           </node>
         </node>
         <node concept="m$_wl" id="7jMyKDao2OK" role="39821P">
@@ -414,7 +423,18 @@
       <node concept="aVJcg" id="78xf10wc_9K" role="aVJcv">
         <node concept="NbPM2" id="78xf10wc_9J" role="aVJcq">
           <node concept="3Mxwew" id="78xf10wc_9I" role="3MwsjC">
-            <property role="3MwjfP" value="1.0" />
+            <property role="3MwjfP" value="1.0.1" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2kB4xC" id="73N_q8k965e" role="1l3spd">
+      <property role="TrG5h" value="intellij_version" />
+      <node concept="3SJUkW" id="73N_q8k96b3" role="aVJcv">
+        <node concept="398BVA" id="73N_q8k96bv" role="3SIlUQ">
+          <ref role="398BVh" node="7jMyKDaoeqK" resolve="path__idea" />
+          <node concept="2Ry0Ak" id="73N_q8k96bU" role="iGT6I">
+            <property role="2Ry0Am" value="build.txt" />
           </node>
         </node>
       </node>
@@ -447,7 +467,13 @@
       <node concept="3981dG" id="7jMyKDaoerf" role="39821P">
         <node concept="3_J27D" id="7jMyKDaoerg" role="Nbhlr">
           <node concept="3Mxwew" id="7jMyKDaoerh" role="3MwsjC">
-            <property role="3MwjfP" value="de.citec.json-plugin-intellij.zip" />
+            <property role="3MwjfP" value="de.citec.json-plugin-intellij-" />
+          </node>
+          <node concept="3Mxwey" id="6BxUZNrgImI" role="3MwsjC">
+            <ref role="3Mxwex" node="73N_q8k965e" resolve="intellij_version" />
+          </node>
+          <node concept="3Mxwew" id="6BxUZNrgImH" role="3MwsjC">
+            <property role="3MwjfP" value=".zip" />
           </node>
         </node>
         <node concept="m$_wl" id="7jMyKDaoeri" role="39821P">
