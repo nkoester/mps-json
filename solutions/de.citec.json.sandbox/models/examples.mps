@@ -111,7 +111,7 @@
           </node>
           <node concept="3wX4Wk" id="3u3fcjnxAxx" role="3wX4Wa">
             <node concept="3wX4Wi" id="3u3fcjnxAyR" role="3wX4Wo">
-              <property role="Xl_RC" value="stringyMCstringFace\n" />
+              <property role="Xl_RC" value="stringyMCstringFace" />
             </node>
           </node>
         </node>
@@ -205,7 +205,7 @@
       <node concept="1ttaij" id="78xf10whJA_" role="3wX4Wd">
         <node concept="3wX4Wf" id="78xf10whJAA" role="3wX4Wn">
           <node concept="3wX4Wi" id="78xf10whJAB" role="3wYPmq">
-            <property role="Xl_RC" value="key" />
+            <property role="Xl_RC" value="keyz" />
           </node>
           <node concept="3wX4Wk" id="78xf10whJAC" role="3wX4Wa">
             <node concept="3wYWGZ" id="78xf10wi8YB" role="3wX4Wo">
