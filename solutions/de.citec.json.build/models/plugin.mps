@@ -220,6 +220,21 @@
     </node>
     <node concept="m$_wf" id="7jMyKDanCJd" role="3989C9">
       <property role="m$_wk" value="de.citec.json" />
+      <node concept="2pNNFK" id="7hyLc6Vva35" role="20twgj">
+        <property role="2pNNFO" value="idea-version" />
+        <node concept="2pNUuL" id="7hyLc6Vva36" role="2pNNFR">
+          <property role="2pNUuO" value="until-build" />
+          <node concept="2pMdtt" id="7hyLc6Vva37" role="2pMdts">
+            <property role="2pMdty" value="181.1254" />
+          </node>
+        </node>
+        <node concept="2pNUuL" id="7hyLc6Vva38" role="2pNNFR">
+          <property role="2pNUuO" value="since-build" />
+          <node concept="2pMdtt" id="7hyLc6Vva39" role="2pMdts">
+            <property role="2pMdty" value="181.1254" />
+          </node>
+        </node>
+      </node>
       <node concept="2pNNFK" id="4J0OvZJgW_f" role="20twgj">
         <property role="2pNNFO" value="vendor" />
         <node concept="2pNUuL" id="4J0OvZJgW_Q" role="2pNNFR">
@@ -236,21 +251,6 @@
         </node>
         <node concept="3o6iSG" id="4J0OvZJgW_K" role="3o6s8t">
           <property role="3o6i5n" value="nkoester" />
-        </node>
-      </node>
-      <node concept="2pNNFK" id="7hyLc6Vva35" role="20twgj">
-        <property role="2pNNFO" value="idea-version" />
-        <node concept="2pNUuL" id="7hyLc6Vva36" role="2pNNFR">
-          <property role="2pNUuO" value="until-build" />
-          <node concept="2pMdtt" id="7hyLc6Vva37" role="2pMdts">
-            <property role="2pMdty" value="181.1254" />
-          </node>
-        </node>
-        <node concept="2pNUuL" id="7hyLc6Vva38" role="2pNNFR">
-          <property role="2pNUuO" value="since-build" />
-          <node concept="2pMdtt" id="7hyLc6Vva39" role="2pMdts">
-            <property role="2pMdty" value="181.1254" />
-          </node>
         </node>
       </node>
       <node concept="1X3_iC" id="7eUwXJU1iq5" role="lGtFl">

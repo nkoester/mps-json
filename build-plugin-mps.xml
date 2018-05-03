@@ -40,8 +40,8 @@
         <depends>jetbrains.mps.core</depends>
         <depends>jetbrains.mps.build</depends>
         <depends>com.dslfoundry.plaintextgen</depends>
-        <vendor email="nkoester@techfak.uni-bielefeld.de" url="https://github.com/nkoester/mps-json">nkoester</vendor>
         <idea-version until-build="181.1254" since-build="181.1254" />
+        <vendor email="nkoester@techfak.uni-bielefeld.de" url="https://github.com/nkoester/mps-json">nkoester</vendor>
         
         <extensions defaultExtensionNs="com.intellij">
           <mps.LanguageLibrary dir="/languages" />
