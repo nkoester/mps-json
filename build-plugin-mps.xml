@@ -3,9 +3,9 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/de.citec.json-mps" />
   <property name="build.layout" location="${build.dir}/artifacts/de.citec.json-mps" />
-  <property name="path__mps" location="${basedir}/../../.local/share/JetBrains/Toolbox/apps/MPS/ch-0/173.1767" />
+  <property name="path__mps" location="" />
   <property name="path__plaintextgen" location="" />
-  <property name="current_version" value="1.0.1" />
+  <property name="current_version" value="2017.3.5" />
   <property name="artifacts.mps" location="${path__mps}" />
   <property name="artifacts.com.dslfoundry.plaintextgen" location="${path__plaintextgen}" />
   <property file="${artifacts.mps}/build.properties" prefix="import.mps" />
@@ -41,7 +41,7 @@
         <depends>jetbrains.mps.build</depends>
         <depends>com.dslfoundry.plaintextgen</depends>
         <vendor email="nkoester@techfak.uni-bielefeld.de" url="https://github.com/nkoester/mps-json">nkoester</vendor>
-        <idea-version since-build="173.1767" />
+        <idea-version until-build="173.1767" since-build="173.1767" />
         
         <extensions defaultExtensionNs="com.intellij">
           <mps.LanguageLibrary dir="/languages" />

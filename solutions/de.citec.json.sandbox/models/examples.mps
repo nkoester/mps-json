@@ -13,6 +13,9 @@
       </concept>
     </language>
     <language id="f5d811eb-f4db-4ae2-a2ea-d6660df08249" name="de.citec.json">
+      <concept id="8223920434513725740" name="de.citec.json.structure.JsonFileReference" flags="ng" index="1ipnkW">
+        <reference id="8223920434513725741" name="jsonFile" index="1ipnkX" />
+      </concept>
       <concept id="8223920434514086080" name="de.citec.json.structure.True" flags="ng" index="1iqfjg" />
       <concept id="8223920434514086081" name="de.citec.json.structure.False" flags="ng" index="1iqfjh" />
       <concept id="3418552502172616688" name="de.citec.json.structure.Member" flags="ng" index="1ttaij">
@@ -123,6 +126,18 @@
                   </node>
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1ttaij" id="78xf10whbaJ" role="3wX4Wd">
+        <node concept="3wX4Wf" id="78xf10whbaK" role="3wX4Wn">
+          <node concept="3wX4Wi" id="78xf10whbaL" role="3wYPmq">
+            <property role="Xl_RC" value="ExternalFileInput" />
+          </node>
+          <node concept="3wX4Wk" id="78xf10whbaM" role="3wX4Wa">
+            <node concept="1ipnkW" id="78xf10whbdd" role="3wX4Wo">
+              <ref role="1ipnkX" node="3u3fcjnuWEE" resolve="myjsonFile" />
             </node>
           </node>
         </node>

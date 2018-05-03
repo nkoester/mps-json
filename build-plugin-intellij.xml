@@ -7,7 +7,7 @@
   <property name="path__idea" location="" />
   <property name="path__plugins" location="${path__mps}/plugins" />
   <property name="path__plaintextgen" location="" />
-  <property name="current_version" value="1.0.1" />
+  <property name="current_version" value="2017.3.5" />
   <loadfile property="intellij_version" srcFile="${path__idea}/build.txt" />
   <property name="artifacts.mps" location="${path__mps}" />
   <property name="artifacts.mpsPlugin" location="${path__plugins}" />
